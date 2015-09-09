@@ -1,0 +1,6 @@
+
+This is one of the simplest way to transform TSV result to CSV on the fly from HIVE query. 
+
+#bash
+hive -e "HIVE SQL" | perl -lpe 's/"/\"/g; s/^|$/"/g; s/\t/","/g' > output.csv
+
